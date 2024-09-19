@@ -1,0 +1,9 @@
+---
+- name: Install security updates on all windows hosts
+  hosts: windows
+  tasks:
+    - name: Install security updates
+      ansible.windows.win_updates:
+        category_names:
+          - SecurityUpdates
+        reboot: true
